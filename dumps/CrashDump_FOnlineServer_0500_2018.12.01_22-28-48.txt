@@ -1,0 +1,106 @@
+Application
+	Name        FOnlineServer
+	Version     0500
+	OS          6.2.9200 ()
+	Timestamp   2018.12.01 22:28:48
+
+Exception
+	Code      EXCEPTION_ACCESS_VIOLATION
+	Address   0x005C1032
+	Flags     0x0
+
+Thread 'GUI' (1368, current)
+	FOnlineServer, protected: int __thiscall Fl_Text_Display::handle_vline(int,int,int,int,int,int,int,int,int)const  + 290
+	FOnlineServer, protected: void __thiscall Fl_Text_Display::draw_vline(int,int,int,int,int) + 217
+	FOnlineServer, protected: void __thiscall Fl_Text_Display::draw_text(int,int,int,int) + 198
+	FOnlineServer, protected: virtual void __thiscall Fl_Text_Display::draw(void) + 2154
+	FOnlineServer, protected: void __thiscall Fl_Group::update_child(class Fl_Widget &)const  + 160
+	FOnlineServer, protected: void __thiscall Fl_Group::draw_children(void) + 373
+	FOnlineServer, protected: virtual void __thiscall Fl_Window::draw(void) + 94
+	FOnlineServer, protected: virtual void __thiscall Fl_Window::flush(void) + 70
+	FOnlineServer, public: static void __cdecl Fl::flush(void) + 140
+	FOnlineServer, int __cdecl fl_wait(double) + 836
+	FOnlineServer, public: static double __cdecl Fl::wait(double) + 23
+	FOnlineServer, public: static int __cdecl Fl::wait(void) + 33
+	FOnlineServer, _main + 1153
+	FOnlineServer, _WinMain@16 + 402
+	FOnlineServer, __tan_default + 552
+	KERNEL32, BaseThreadInitThunk + 36
+	ntdll, RtlSubscribeWnfStateChangeNotification + 1081
+	ntdll, RtlSubscribeWnfStateChangeNotification + 1028
+
+Thread 'GUIUpdate' (4156)
+	ntdll, ZwDelayExecution + 12
+	KERNELBASE, Sleep + 15
+	FOnlineServer, void __cdecl GUIUpdate(void *) + 33
+	FOnlineServer, void * __cdecl ThreadBeginExecution(void *) + 44
+	FOnlineServer, _ptw32_threadStart@4 + 97
+	FOnlineServer, __endthreadex + 58
+	FOnlineServer, __endthreadex + 196
+	KERNEL32, BaseThreadInitThunk + 36
+	ntdll, RtlSubscribeWnfStateChangeNotification + 1081
+	ntdll, RtlSubscribeWnfStateChangeNotification + 1028
+	MSCTF, TF_SetShowFloatingStatus + 200160
+
+Thread 'WorldSaveManager' (1124)
+	ntdll, NtWaitForSingleObject + 12
+	KERNELBASE, WaitForSingleObject + 18
+	FOnlineServer, public: static void __cdecl FOServer::Dump_Work(void *) + 46
+	FOnlineServer, void * __cdecl ThreadBeginExecution(void *) + 44
+	FOnlineServer, _ptw32_threadStart@4 + 97
+	FOnlineServer, __endthreadex + 58
+	FOnlineServer, __endthreadex + 196
+	KERNEL32, BaseThreadInitThunk + 36
+	ntdll, RtlSubscribeWnfStateChangeNotification + 1081
+	ntdll, RtlSubscribeWnfStateChangeNotification + 1028
+
+Loaded modules
+	C:\Users\Administrator\Desktop\Server\FOnlineServer.exe (00400000)
+	C:\Windows\SYSTEM32\ntdll.dll (77740000)
+	C:\Windows\System32\KERNEL32.DLL (74290000)
+	C:\Windows\System32\KERNELBASE.dll (76760000)
+	C:\Windows\System32\USER32.dll (74690000)
+	C:\Windows\System32\win32u.dll (74D10000)
+	C:\Windows\System32\GDI32.dll (747F0000)
+	C:\Windows\System32\gdi32full.dll (76DF0000)
+	C:\Windows\System32\ADVAPI32.dll (74D40000)
+	C:\Windows\System32\msvcrt.dll (74B50000)
+	C:\Windows\System32\sechost.dll (761F0000)
+	C:\Windows\System32\RPCRT4.dll (76240000)
+	C:\Windows\System32\SspiCli.dll (74210000)
+	C:\Windows\System32\CRYPTBASE.dll (74200000)
+	C:\Windows\System32\bcryptPrimitives.dll (74370000)
+	C:\Windows\System32\WS2_32.dll (74820000)
+	C:\Windows\System32\PSAPI.DLL (74C60000)
+	C:\Windows\System32\COMDLG32.dll (74A60000)
+	C:\Windows\System32\combase.dll (76F50000)
+	C:\Windows\System32\ucrtbase.dll (74890000)
+	C:\Windows\System32\shcore.dll (74460000)
+	C:\Windows\System32\SHLWAPI.dll (74DC0000)
+	C:\Windows\SYSTEM32\dbghelp.dll (73C50000)
+	C:\Windows\System32\SHELL32.dll (74E10000)
+	C:\Windows\System32\cfgmgr32.dll (77170000)
+	C:\Windows\System32\windows.storage.dll (771B0000)
+	C:\Windows\SYSTEM32\WINMM.dll (73C20000)
+	C:\Windows\System32\powrprof.dll (74240000)
+	C:\Windows\System32\kernel.appcore.dll (76DE0000)
+	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.14393.2457_none_e8ebe5c0ed79850d\COMCTL32.dll (73B80000)
+	C:\Windows\System32\profapi.dll (769C0000)
+	C:\Windows\SYSTEM32\WINMMBASE.dll (73B50000)
+	C:\Windows\System32\ole32.dll (74970000)
+	C:\Windows\SYSTEM32\dbgcore.DLL (73B20000)
+	C:\Windows\System32\IMM32.DLL (76370000)
+	C:\Windows\system32\uxtheme.dll (73F10000)
+	C:\Windows\System32\MSCTF.dll (74550000)
+	C:\Windows\System32\OLEAUT32.dll (76920000)
+	C:\Windows\System32\msvcp_win.dll (766E0000)
+	C:\Windows\system32\dwmapi.dll (73EF0000)
+	C:\Windows\System32\clbcatq.dll (743D0000)
+	C:\Windows\system32\dataexchange.dll (73AD0000)
+	C:\Windows\system32\d3d11.dll (738A0000)
+	C:\Windows\system32\dcomp.dll (73780000)
+	C:\Windows\system32\dxgi.dll (736F0000)
+	C:\Windows\system32\twinapi.appcore.dll (735F0000)
+	C:\Windows\system32\bcrypt.dll (735D0000)
+	C:\Windows\system32\msimtf.dll (735C0000)
+	C:\Windows\system32\mswsock.dll (73E80000)
