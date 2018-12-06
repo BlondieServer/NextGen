@@ -5012,7 +5012,7 @@ Flags=134217758
 DisableEgg=1
 Weight=635
 SoundId=48
-Cost=1
+Cost=100
 Material=1
 
 [Proto]
@@ -5026,7 +5026,7 @@ Flags=134217758
 DisableEgg=1
 Weight=426
 SoundId=48
-Cost=1
+Cost=250
 Material=1
 
 [Proto]
@@ -5040,7 +5040,7 @@ Flags=134217758
 Weight=416
 DisableEgg=1
 SoundId=48
-Cost=1
+Cost=500
 Material=1
 
 [Proto]
