@@ -74,14 +74,13 @@ uint cte_bleed( Critter& cr, int identifier, uint& rate )
         return 0;
     }
 
-    uint16 damage = CLAMP( bleed * 0.1, 0, cr.StatBase[ ST_CURRENT_HP ] / 10 ) ;
+    uint16 damage = CLAMP( bleed * 0.1, 0, 50 ) ;
+	if( damage > 10 )
+		cr.Say( SAY_NETMSG, "[" + damage + " I " + bleed + "]" );
+	
+    InjureCritter( cr, damage, DAMAGE_NORMAL, 0, 0 );
 
-    if( cr.StatBase[ ST_CURRENT_HP ] > damage ) cr.StatBase[ ST_CURRENT_HP ] -= damage;
-    else InjureCritter( cr, damage, DAMAGE_NORMAL, 0, 0 );
-
-    bleed --;
-    bleed = CLAMP( bleed, 0, bleed );
-    cr.StatBase[ ST_BLEED ] = bleed;
+    cr.StatBase[ ST_BLEED ] = CLAMP( bleed--, 0, bleed );
 
     cr.Say( SAY_NETMSG, "Вы истекаете кровью." );
 
