@@ -1,5 +1,0 @@
-[Info]
-Version=1.01
-LastSave=1466568
-MaxTotalCounter=0
-
