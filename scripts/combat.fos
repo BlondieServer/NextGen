@@ -2679,8 +2679,14 @@ void ApplyDamage( AttackStruct& attack, Critter& target, uint rounds, bool isCri
     }
     if( attack.WeaponPid == PID_SAWGUN_LOW )
     {
-        if( Random( 0, 5 ) != 0 )
-            realWeapon.AmmoCount ++;
+        if
+		(
+			attacker.Mode[ MODE_UNLIMITED_AMMO ] == 0 && //Бесконечные патроны не могут "экономиться", лол.
+			Random( 0, 1 ) != 0 && //50% шанс съекономить топливо.
+			realWeapon.AmmoCount < realWeapon.Proto.Weapon_MaxAmmoCount //Если есть куда его вообще "экономить".
+		)
+            realWeapon.AmmoCount++;
+			
         if( ( !target.IsDead() || !target.IsKnockout() ) && validAttacker )
         {
             uint8 dist = GetDistantion( attack.Hx, attack.Hy, target.HexX, target.HexY );
