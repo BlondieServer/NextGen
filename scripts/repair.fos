@@ -3,7 +3,7 @@
 
 bool TryRepairItem( Critter& cr, Item& item ) // Export
 {
-	return false; //Отключено, оставил для потомков.
+	//return false; //Отключено, оставил для потомков.
 	
     if( not item.IsDeteriorable() )
         return true;
