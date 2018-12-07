@@ -1345,7 +1345,7 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
         break;
 		
     case SKILL_TAKE_ALL_CONT:     // Take all items from critter or item container
-        cr.Say( SAY_EMOTE, "גûדנובאוע גס¸ קעמ למזוע" );
+        cr.Say( SAY_EMOTE_ON_HEAD, "גûדנובאוע גס¸ קעמ למזוע" );
 		if( targetItem.Accessory == ACCESSORY_CRITTER && targetItem.CritId == cr.Id )
         {
             // int freeWeight=cr.Stat[ST_CARRY_WEIGHT]-cr.ItemsWeight(),
@@ -1405,7 +1405,7 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
         }
 
         // Radio
-        if( valid( targetItem ) && FLAG( targetItem.Flags, ITEM_RADIO ) && targetItem.Accessory == ACCESSORY_CRITTER && targetItem.CritId == cr.Id )
+        if( valid( targetItem ) && skill != SK_SCIENCE && FLAG( targetItem.Flags, ITEM_RADIO ) && targetItem.Accessory == ACCESSORY_CRITTER && targetItem.CritId == cr.Id )
         {
             if( isPlayer )
                 EditRadioSettings( cr, targetItem );
@@ -3492,16 +3492,17 @@ void unsafe_MakeDescLex( Critter& player, int param0, int param1, int param2, st
 	MakeDescLex( player, 0, param3 );
 }
 
-void unsafe_ShowFullPopupInfo( Critter& player, int param0, int param1, int param2, string@ param3, int[] @ param4 )
+void unsafe_ShowFullPopupInfo( Critter& player, int itemID, int param1, int param2, string@ text, int[] @ param4 )
 {
     Map@ map = player.GetMap();
 	if(!valid(map)) return;
-	Item@ target = map.GetItem(param0);
+	Item@ target = map.GetItem(itemID);
 	if(!valid(target)) return;
 	int id = target.Val0;
-	player.Say( SAY_NETMSG, param3 + " [" + ( id != 0 ? GetPlayerName(id) + ", id " + id : "ZERO ERROR" ) + "]"  );
+	player.Say( SAY_NETMSG, text + " [" + ( id != 0 ? GetPlayerName(id) + ", id " + id : "ZERO ERROR" ) + "]"  );
 	if( target.Val1 == 1 )
-		map.SetText( player.HexX, player.HexY, COLOR_RGB(0xFF,0x00,0xFF), param3 );
+		player.Say( SAY_NORM, text );
+		//map.SetText( player.HexX, player.HexY, COLOR_RGB(0xFF,0x00,0xFF), text );
 }
 
 void unsafe_ShowPopup( Critter& player, int itemID, int param1, int param2, string@ text, int[] @ param4 )
@@ -3515,7 +3516,8 @@ void unsafe_ShowPopup( Critter& player, int itemID, int param1, int param2, stri
 		return;
 	}
 	if( target.Val1 == 1 )
-		map.SetText( player.HexX, player.HexY, COLOR_RGB(0xFF,0x00,0xFF), text );
+		player.Say( SAY_NORM, text );
+		//map.SetText( player.HexX, player.HexY, COLOR_RGB(0xFF,0x00,0xFF), text );
 	else 
 		player.Say( SAY_NETMSG, text );
 }
