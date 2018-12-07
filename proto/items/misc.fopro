@@ -1228,6 +1228,7 @@ Weight=2267
 Volume=1
 SoundId=48
 Material=1
+Cost=200
 
 [Proto]
 ProtoId=267
@@ -1982,7 +1983,7 @@ Stackable=1
 Weight=453
 Volume=1
 SoundId=48
-Cost=100
+Cost=50
 Material=1
 
 [Proto]
